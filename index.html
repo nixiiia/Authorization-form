@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="./style/normalize.css">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="menu">
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a class="menu__link" data-target="form-auth">Войти</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" data-target="form-register">Зарегистрироваться</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="form__page">
+        <div class="form__container">
+            <form class="form form-auth" id="form-auth" novalidate>
+                <h3 class="form__title">Авторизация</h3>
+                <input type="email" class="form__input" id="auth-email" autofocus autocomplete="off"
+                    placeholder="Email">
+                <span class="form__par--empty">
+                    * Введите полный адрес электронной почты
+                </span>
+                <input type="password" class="form__input" id="auth-pass" placeholder="Пароль">
+                <span class="form__par--empty">
+                    * Кажется пароль не совпадает
+                    <br>
+                    <br>
+                    * Пароль должен содержать минимум 6 символов
+                </span>
+                <label class="form__label">
+                    <input type="checkbox" class="form__input input-checkbox" id="auth-agree">
+                    <span class="input-checkbox-style"></span>
+                    Запомнить меня
+                </label>
+                <button type="submit" class="form__btn">Войти</button>
+                <div class="form__links-container">
+                    <span class="form__link" data-target="form-reset">Забыли пароль?</span>
+                    <span class="form__link" data-target="form-register">Создать аккаунт</span>
+                </div>
+            </form>
+        </div>
+        <div class="form__container">
+            <form class="form form-register" id="form-register">
+                <h3 class="form__title">Регистрация</h3>
+                <input type="text" class="form__input" id="register-name" autofocus placeholder="Имя">
+                <span class="form__par--empty">
+                    * В имени можно использовать только русские буквы
+                </span>
+                <input type="email" class="form__input" id="register-email" autocomplete="off" placeholder="Email">
+                <span class="form__par--empty">
+                    * Введите полный адрес электронной почты
+                </span>
+                <input type="password" class="form__input" id="register-pass" placeholder="Придумайте пароль">
+                <span class="form__par--empty">
+                    * Пароль должен содержать минимум 6 символов
+                </span>
+                <input type="password" class="form__input" id="register-pass-repeat" placeholder="Подтвердите пароль">
+                <span class="form__par--empty">
+                    * Кажется пароль не совпадает
+                </span>
+                <button type="submit" class="form__btn">Зарегистрироваться</button>
+                <span class="form__link" data-target="form-auth">Уже есть аккаунт?</span>
+            </form>
+        </div>
+        <div class="form__container">
+            <form class="form form-reset" id="form-reset">
+                <h3 class="form__title">Восстановление пароля</h3>
+                <input type="email" class="form__input" id="reset-email" autocomplete="off" autofocus
+                    placeholder="Email">
+                <span class="form__par--empty">
+                    * Введите полный адрес электронной почты
+                </span>
+                <button type="submit" class="form__btn">Восстановить пароль</button>
+                <span class="form__link" data-target="form-auth">Вернуться к авторизации</span>
+            </form>
+        </div>
+        <!-- <div class="success-notification">
+            <svg class="success__img" width="25" height="25" viewBox="0 0 90 90" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M45 0.555664C36.2097 0.555664 27.6168 3.16228 20.308 8.0459C12.9991 12.9295 7.30259 19.8708 3.93869 27.992C0.574799 36.1131 -0.305349 45.0494 1.40955 53.6708C3.12445 62.2922 7.35737 70.2114 13.573 76.4271C19.7887 82.6427 27.708 86.8757 36.3293 88.5906C44.9507 90.3055 53.887 89.4253 62.0082 86.0614C70.1293 82.6975 77.0706 77.001 81.9542 69.6921C86.8378 62.3833 89.4445 53.7904 89.4445 45.0001C89.4445 33.2127 84.7619 21.9081 76.427 13.5731C68.092 5.23819 56.7874 0.555664 45 0.555664ZM74.0278 30.0834L37.5278 66.5557L15.9722 45.0001C15.2355 44.2634 14.8216 43.2642 14.8216 42.2223C14.8216 41.1805 15.2355 40.1813 15.9722 39.4446C16.7089 38.7078 17.7081 38.294 18.75 38.294C19.7919 38.294 20.7911 38.7078 21.5278 39.4446L37.5833 55.5001L68.5278 24.5834C68.8926 24.2187 69.3256 23.9293 69.8022 23.7319C70.2789 23.5345 70.7897 23.4328 71.3056 23.4328C71.8214 23.4328 72.3323 23.5345 72.8089 23.7319C73.2855 23.9293 73.7186 24.2187 74.0833 24.5834C74.4481 24.9482 74.7375 25.3813 74.9349 25.8579C75.1323 26.3345 75.2339 26.8453 75.2339 27.3612C75.2339 27.8771 75.1323 28.3879 74.9349 28.8645C74.7375 29.3412 74.4481 29.7742 74.0833 30.139L74.0278 30.0834Z"
+                    fill="#21A038" />
+                <path
+                    d="M74.0278 30.0834L37.5278 66.5557L15.9722 45.0001C15.2355 44.2634 14.8216 43.2642 14.8216 42.2223C14.8216 41.1805 15.2355 40.1813 15.9722 39.4446C16.7089 38.7078 17.7081 38.294 18.75 38.294C19.7919 38.294 20.7911 38.7078 21.5278 39.4446L37.5833 55.5001L68.5278 24.5834C68.8926 24.2187 69.3256 23.9293 69.8022 23.7319C70.2789 23.5345 70.7897 23.4328 71.3056 23.4328C71.8214 23.4328 72.3323 23.5345 72.8089 23.7319C73.2855 23.9293 73.7186 24.2187 74.0833 24.5834C74.4481 24.9482 74.7375 25.3813 74.9349 25.8579C75.1323 26.3345 75.2339 26.8453 75.2339 27.3612C75.2339 27.8771 75.1323 28.3879 74.9349 28.8645C74.7375 29.3412 74.4481 29.7742 74.0833 30.139L74.0278 30.0834Z"
+                    fill="white" />
+            </svg>
+            <h3 class="success__title">
+                Вы успешно зарегистрированы!
+            </h3>
+            <button class="success__close">&#10006;</button>
+        </div> -->
+    </section>
+    <script src="./scripts/main.js"></script>
+</body>
+
+</html>
